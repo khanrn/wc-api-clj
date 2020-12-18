@@ -1,0 +1,12 @@
+WC API Clojure Test Read
+ck_86e637eef49ca8f2c864ad7b84dc17b0a7b78750
+cs_0890a046f5b9a30825970a65d8ab8e9c7fa0deb6
+
+WC API Clojure Test Write
+ck_469b67ce2e12bd1a1b290abf4b1c108e61b4f71c
+cs_a745666f060dd8b03d71bd2f09aabdfdea980442
+
+WC API Clojure Test Read/Write
+ck_c0847c624575f61d5a91050f60e185a0594be3e1
+cs_6728bda01bd36173d6af0d171839347c88d3a43d
+
