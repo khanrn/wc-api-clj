@@ -4,7 +4,7 @@ A wrapper of *WooCommerce* REST API written in *Clojure*.
 
 ## Usage
 
-Please see the implementations in the `src/wc_api_clj/v3` directory for the helper functions which has implementations of core functions. Also the tests are some well tailored example of the implementation of this library. You'll find them in `tests/wc_api_clj`.
+Please see the implementations in the `src/wc_api_clj/v3` directory for the helper functions which has implementations of core functions. Also the tests are some well tailored example of the implementation of this library. You'll find them in `test/wc_api_clj`.
 
 ## License
 
