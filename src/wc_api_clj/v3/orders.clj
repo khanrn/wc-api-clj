@@ -1,4 +1,7 @@
 (ns wc-api-clj.v3.orders
+  "Helper functions to communicate with the WooCommerce REST API's orders endpoints.
+  These functions need authentication by `consumer_key` and `consumer_secret`.</br>
+  https://woocommerce.github.io/woocommerce-rest-api-docs/#orders"
   (:require [wc-api-clj.core :as woo]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
