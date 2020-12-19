@@ -26,7 +26,7 @@ Please see the implementations in the `src/wc_api_clj/v3` directory for the help
 
 ## License
 
-Copyright © 2020 *CodeMascot*, *Khan Mohammad R.*
+Copyright © 2020 **[CodeMascot](https://www.codemascot.com/)**, **[Khan Mohammad R.](https://www.codemascot.com/)**
 
 This program and the accompanying materials are made available under the terms of the Eclipse Public License 2.0 which is available at http://www.eclipse.org/legal/epl-2.0.
 
