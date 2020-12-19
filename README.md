@@ -32,4 +32,4 @@ This program and the accompanying materials are made available under the terms o
 
 ## Acknowledgment
 
-The *Clojure* logo is borrowed from 
+The *Clojure* logo is borrowed under [MIT license](https://opensource.org/licenses/MIT), from *[Vorillaz's](https://iconscout.com/contributors/vorillaz/icons)* account at [Iconscout](https://iconscout.com).
