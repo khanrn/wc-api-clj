@@ -1,6 +1,10 @@
 (ns wc-api-clj.v3.products
   (:require [wc-api-clj.core :as woo]))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Products REST API v3 helper functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defn create-product
   "Create product(s) and it's needed basic authentication."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]

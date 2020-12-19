@@ -1,6 +1,10 @@
 (ns wc-api-clj.v3.orders
   (:require [wc-api-clj.core :as woo]))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Orders REST API v3 helper functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defn create-order
   "Create order(s) and it's needed basic authentication."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]

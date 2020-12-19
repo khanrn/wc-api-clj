@@ -1,6 +1,10 @@
 (ns wc-api-clj.v3.coupons
   (:require [wc-api-clj.core :as woo]))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Coupons REST API v3 helper functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defn create-coupon
   "Create coupon(s) and it need basic authentication."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]
