@@ -57,16 +57,16 @@
 
 (deftest product-v3-api-batch-update-success-test
   (testing "Testing product v3 API for batch update."
-    (let [resp (products-batch-update {:url (:siteurl credentials)
-                                      :consumer_key (:ckw credentials)
-                                      :consumer_secret (:csw credentials)
-                                      :exception false
-                                      :insecure true
-                                      :body (json/write-str {:create [{:codename "Test Batch Update"
-                                                                       :type "simple"
-                                                                       :regular_price "21.99"
-                                                                       :description "Pellentesque habitant morbi tristique senectus et netus et."
-                                                                       :short_description "Pellentesque habitant morbi tristique senectus."}]})})]
+    (let [resp (products-batch-operations {:url (:siteurl credentials)
+                                           :consumer_key (:ckw credentials)
+                                           :consumer_secret (:csw credentials)
+                                           :exception false
+                                           :insecure true
+                                           :body (json/write-str {:create [{:codename "Test Batch Update"
+                                                                            :type "simple"
+                                                                            :regular_price "21.99"
+                                                                            :description "Pellentesque habitant morbi tristique senectus et netus et."
+                                                                            :short_description "Pellentesque habitant morbi tristique senectus."}]})})]
       (is (< 0 (:id (first (:create resp)))))
       (is (= "21.99" (:regular_price (first (:create resp)))))
       (is (= "simple" (:type (first (:create resp)))))
@@ -77,7 +77,7 @@
                           :insecure true
                           :body (json/write-str {:update [{:id (:id (first (:create resp)))
                                                            :regular_price "50.00"}]})}
-                         (products-batch-update)
+                         (products-batch-operations)
                          (:update)
                          (first)
                          (:regular_price))))
@@ -87,7 +87,7 @@
                                                :exception false
                                                :insecure true
                                                :body (json/write-str {:delete [(:id (first (:create resp)))]})}
-                                              (products-batch-update)
+                                              (products-batch-operations)
                                               (:delete)
                                               (first)
                                               (:id)))))))
