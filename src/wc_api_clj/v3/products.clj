@@ -1,4 +1,7 @@
 (ns wc-api-clj.v3.products
+  "Helper functions to communicate with the WooCommerce REST API's products endpoints.
+  These functions need authentication by `consumer_key` and `consumer_secret`.</br>
+  https://woocommerce.github.io/woocommerce-rest-api-docs/#products"
   (:require [wc-api-clj.core :as woo]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
