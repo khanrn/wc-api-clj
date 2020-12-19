@@ -57,17 +57,17 @@
 
 (deftest coupon-v3-api-batch-update-success-test
   (testing "Testing coupon v3 API for batch update."
-    (let [resp (coupons-batch-update {:url (:siteurl credentials)
-                                      :consumer_key (:ckw credentials)
-                                      :consumer_secret (:csw credentials)
-                                      :exception false
-                                      :insecure true
-                                      :body (json/write-str {:create [{:code "20off"
-                                                                       :discount_type "percent"
-                                                                       :amount "20"
-                                                                       :individual_use true
-                                                                       :exclude_sale_items true
-                                                                       :minimum_amount "100.00"}]})})]
+    (let [resp (coupons-batch-operations {:url (:siteurl credentials)
+                                          :consumer_key (:ckw credentials)
+                                          :consumer_secret (:csw credentials)
+                                          :exception false
+                                          :insecure true
+                                          :body (json/write-str {:create [{:code "20off"
+                                                                           :discount_type "percent"
+                                                                           :amount "20"
+                                                                           :individual_use true
+                                                                           :exclude_sale_items true
+                                                                           :minimum_amount "100.00"}]})})]
       (is (< 0 (:id (first (:create resp)))))
       (is (= "20.00" (:amount (first (:create resp)))))
       (is (= "20off" (:code (first (:create resp)))))
@@ -79,7 +79,7 @@
                           :insecure true
                           :body (json/write-str {:update [{:id (:id (first (:create resp)))
                                                            :minimum_amount "50.00"}]})}
-                         (coupons-batch-update)
+                         (coupons-batch-operations)
                          (:update)
                          (first)
                          (:minimum_amount))))
@@ -89,7 +89,7 @@
                                                :exception false
                                                :insecure true
                                                :body (json/write-str {:delete [(:id (first (:create resp)))]})}
-                                              (coupons-batch-update)
+                                              (coupons-batch-operations)
                                               (:delete)
                                               (first)
                                               (:id)))))))

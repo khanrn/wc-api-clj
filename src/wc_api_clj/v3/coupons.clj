@@ -63,7 +63,7 @@
                         :insecure (not (not insecure))})
        (catch clojure.lang.ExceptionInfo e (str (.getMessage e)))))
 
-(defn coupons-batch-update
+(defn coupons-batch-operations
   "CRUD multiple coupons in a batch."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]
   (try (woo/post-req {:url (str url "/wp-json/wc/v3/coupons/batch")
