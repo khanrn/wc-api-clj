@@ -1,4 +1,6 @@
 (ns wc-api-clj.rest
+  "Basic functions to communicate with the **WordPress** REST API endpoints.
+  These functions can be used for **WordPress** REST API communication as well."
   (:require [clj-http.client :as http]
             [clojure.data.json :as json]))
 
