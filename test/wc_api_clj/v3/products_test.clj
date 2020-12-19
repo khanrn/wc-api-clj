@@ -11,38 +11,49 @@
 
 (deftest product-v3-api-create-read-update-delete-success-test
   (testing "Testing product v3 API for create, read, update and delete."
-    (let [{:keys [id regular_price]} (create-product {:url (:siteurl credentials)
-                                                      :consumer_key (:ckw credentials)
-                                                      :consumer_secret (:csw credentials)
-                                                      :exception false
-                                                      :insecure true
-                                                      :body (json/write-str (:product_to_create credentials))})]
+    (let [{:keys [id regular_price]}
+          (-> {:url (:siteurl credentials)
+               :consumer_key (:ckw credentials)
+               :consumer_secret (:csw credentials)
+               :exception false
+               :insecure true
+               :body (json/write-str (:product_to_create credentials))}
+              (create-product))]
       (is (< 0 id))
       (is (= "21" regular_price))
-      (is (< 0 (count (get-products {:url (:siteurl credentials)
-                                     :consumer_key (:ckr credentials)
-                                     :consumer_secret (:csr credentials)
-                                     :exception false
-                                     :insecure true}))))
-      (is (= id (:id (get-product-by-id {:url (:siteurl credentials)
-                                         :consumer_key (:ckr credentials)
-                                         :consumer_secret (:csr credentials)
-                                         :product id
-                                         :exception true
-                                         :insecure true}))))
-      (is (= "13" (:regular_price (update-product-by-id {:url (:siteurl credentials)
-                                                         :consumer_key (:ckw credentials)
-                                                         :consumer_secret (:csw credentials)
-                                                         :product id
-                                                         :body (json/write-str {:regular_price "13"})
-                                                         :exception false
-                                                         :insecure true}))))
-      (is (= id (:id (delete-product-by-id {:url (:siteurl credentials)
-                                            :consumer_key (:ckw credentials)
-                                            :consumer_secret (:csw credentials)
-                                            :product id
-                                            :exception false
-                                            :insecure true})))))))
+      (is (< 0 (-> {:url (:siteurl credentials)
+                    :consumer_key (:ckr credentials)
+                    :consumer_secret (:csr credentials)
+                    :exception true
+                    :insecure true}
+                   (get-products)
+                   (first)
+                   (:id))))
+      (is (= id (-> {:url (:siteurl credentials)
+                     :consumer_key (:ckr credentials)
+                     :consumer_secret (:csr credentials)
+                     :product id
+                     :exception true
+                     :insecure true}
+                    (get-product-by-id)
+                    (:id))))
+      (is (= "13" (-> {:url (:siteurl credentials)
+                       :consumer_key (:ckw credentials)
+                       :consumer_secret (:csw credentials)
+                       :product id
+                       :body (json/write-str {:regular_price "13"})
+                       :exception false
+                       :insecure true}
+                      (update-product-by-id)
+                      (:regular_price))))
+      (is (= id (-> {:url (:siteurl credentials)
+                     :consumer_key (:ckw credentials)
+                     :consumer_secret (:csw credentials)
+                     :product id
+                     :exception false
+                     :insecure true}
+                    (delete-product-by-id)
+                    (:id)))))))
 
 (deftest product-v3-api-batch-update-success-test
   (testing "Testing product v3 API for batch update."
@@ -59,16 +70,24 @@
       (is (< 0 (:id (first (:create resp)))))
       (is (= "21.99" (:regular_price (first (:create resp)))))
       (is (= "simple" (:type (first (:create resp)))))
-      (is (= "50.00" (:regular_price (first (:update (products-batch-update {:url (:siteurl credentials)
-                                                                             :consumer_key (:ckw credentials)
-                                                                             :consumer_secret (:csw credentials)
-                                                                             :exception false
-                                                                             :insecure true
-                                                                             :body (json/write-str {:update [{:id (:id (first (:create resp)))
-                                                                                                              :regular_price "50.00"}]})}))))))
-      (is (= (:id (first (:create resp))) (:id (first (:delete (products-batch-update {:url (:siteurl credentials)
-                                                                                      :consumer_key (:ckw credentials)
-                                                                                      :consumer_secret (:csw credentials)
-                                                                                      :exception false
-                                                                                      :insecure true
-                                                                                      :body (json/write-str {:delete [(:id (first (:create resp)))]})})))))))))
+      (is (= "50.00" (-> {:url (:siteurl credentials)
+                          :consumer_key (:ckw credentials)
+                          :consumer_secret (:csw credentials)
+                          :exception false
+                          :insecure true
+                          :body (json/write-str {:update [{:id (:id (first (:create resp)))
+                                                           :regular_price "50.00"}]})}
+                         (products-batch-update)
+                         (:update)
+                         (first)
+                         (:regular_price))))
+      (is (= (:id (first (:create resp))) (-> {:url (:siteurl credentials)
+                                               :consumer_key (:ckw credentials)
+                                               :consumer_secret (:csw credentials)
+                                               :exception false
+                                               :insecure true
+                                               :body (json/write-str {:delete [(:id (first (:create resp)))]})}
+                                              (products-batch-update)
+                                              (:delete)
+                                              (first)
+                                              (:id)))))))
