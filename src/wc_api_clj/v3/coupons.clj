@@ -1,4 +1,7 @@
 (ns wc-api-clj.v3.coupons
+  "Helper functions to communicate with the WooCommerce REST API's coupons endpoints.
+  These functions need authentication by `consumer_key` and `consumer_secret`.</br>
+  https://woocommerce.github.io/woocommerce-rest-api-docs/#coupons"
   (:require [wc-api-clj.core :as woo]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
