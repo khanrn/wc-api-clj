@@ -1,5 +1,5 @@
-(defproject wc-api-clj "0.1.0-SNAPSHOT"
-  :description "WooCommerce REST API wrapper written in Clojure."
+(defproject codemascot/wc-api-clj "0.1.0-SNAPSHOT"
+  :description "WooCommerce REST API client written in Clojure."
   :url "https://github.com/codemascot/wc-api-clj"
   :scm {:name "git"
         :url "https://github.com/codemascot/wc-api-clj"}
