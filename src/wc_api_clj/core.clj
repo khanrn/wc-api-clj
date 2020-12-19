@@ -1,4 +1,6 @@
 (ns wc-api-clj.core
+  "Wrapper functions around [[wc-api-clj.rest]] functions to communicate
+  with the **WooCommerce** REST API endpoints."
   (:require [wc-api-clj.rest :as wp-rest]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
