@@ -58,12 +58,12 @@
 
 (deftest order-v3-api-batch-update-success-test
   (testing "Testing order v3 API for batch update."
-    (let [resp (orders-batch-update {:url (:siteurl credentials)
-                                     :consumer_key (:ckw credentials)
-                                     :consumer_secret (:csw credentials)
-                                     :exception false
-                                     :insecure true
-                                     :body (json/write-str {:create [(:order_to_create credentials)]})})]
+    (let [resp (orders-batch-operations {:url (:siteurl credentials)
+                                         :consumer_key (:ckw credentials)
+                                         :consumer_secret (:csw credentials)
+                                         :exception false
+                                         :insecure true
+                                         :body (json/write-str {:create [(:order_to_create credentials)]})})]
       (is (< 0 (:id (first (:create resp)))))
       (is (= "10.00" (:shipping_total (first (:create resp)))))
       (is (= "john.doe@example.com" (:email (:billing (first (:create resp))))))
@@ -75,7 +75,7 @@
                               :insecure true
                               :body (json/write-str {:update [{:id (:id (first (:create resp)))
                                                                :status "completed"}]})}
-                             (orders-batch-update)
+                             (orders-batch-operations)
                              (:update)
                              (first)
                              (:status))))
@@ -85,7 +85,7 @@
                                                :exception false
                                                :insecure true
                                                :body (json/write-str {:delete [(:id (first (:create resp)))]})}
-                                              (orders-batch-update)
+                                              (orders-batch-operations)
                                               (:delete)
                                               (first)
                                               (:id)))))))
