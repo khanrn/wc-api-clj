@@ -1,8 +1,6 @@
-<p align="center"><a href="https://codemascot.com" target="_blank"><img src="https://raw.githubusercontent.com/codemascot/wc-api-clj/master/img/logo.svg" width="400"></a></p>
-<p align="center"><a href="http://www.eclipse.org/legal/epl-2.0" target="_blank"><img src="https://raw.githubusercontent.com/codemascot/wc-api-clj/master/img/License-EPL-2.0-41208c.svg" alt="License"></a></p>
+<p align="center"><a href="https://codemascot.com" target="_blank"><img src="https://raw.githubusercontent.com/codemascot/wc-api-clj/master/img/logo.svg" width="600"></a></p>
 
-# *WooCommerce* REST API Client - Written in *Clojure*
-
+## *WooCommerce* REST API Client - Written in *Clojure*
 A wrapper of *WooCommerce* REST API written in *Clojure*. Easily interact with the WooCommerce REST API securely using this library. If using a HTTPS connection this library uses *BasicAuth*. Working on Oauth support, would be released soon.
 
 ## Documentation
