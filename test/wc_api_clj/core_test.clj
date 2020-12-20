@@ -51,4 +51,13 @@
                   :ckw "ck_469b67ce2e12bd1a1b290abf4b1c108e61b4f71c"
                   :csw "cs_a745666f060dd8b03d71bd2f09aabdfdea980442"
                   :ckrw "ck_c0847c624575f61d5a91050f60e185a0594be3e1"
-                  :csrw "cs_6728bda01bd36173d6af0d171839347c88d3a43d"})
+                  :csrw "cs_6728bda01bd36173d6af0d171839347c88d3a43d"
+                  :post_to_create {:date "2015-05-05T10:00:00"
+                                   :slug "test-post-slug"
+                                   :password "12$45"
+                                   :content "Test Post Content"
+                                   :excerpt "Test Post Excerpt"
+                                   :title "Test Post Title"
+                                   :status "publish"}
+                  :username "admin"
+                  :password "admin"})
