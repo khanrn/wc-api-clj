@@ -9,7 +9,8 @@
                  [clj-http "3.1.0"]
                  [org.clojure/data.json "1.0.0"]]
   :plugins [[lein-codox "0.10.7"]]
-  :codox {:output-path "docs/html"
+  :codox {:project {:name "wc-api-clj"}
+          :output-path "docs/html"
           :metadata {:doc "TODO: Add docstring"
                      :doc/format :markdown}}
   :repl-options {:init-ns wc-api-clj.core})
