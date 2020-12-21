@@ -1,6 +1,7 @@
 (ns wc-api-clj.core-test
   (:require [clojure.test :refer :all]
-            [wc-api-clj.core :refer :all]))
+            [wc-api-clj.core :refer :all]
+            [clojure.data.json :as json]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Testing Credentials ;;
@@ -61,3 +62,43 @@
                                    :status "publish"}
                   :username "admin"
                   :password "admin"})
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Testing core.clj ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+(deftest core-api-functions-success-test
+  (testing "Testing core API functions."
+    (let [resp (post-req {:url (str (:siteurl credentials) "/wp-json/wc/v3/products")
+                          :username (:ckw credentials)
+                          :password (:csw credentials)
+                          :body (json/write-str (:product_to_create credentials))
+                          :exception true
+                          :insecure true})]
+      (is (< 0 (:id resp)))
+      (is (= (:regular_price (:product_to_create credentials)) (:regular_price resp)))
+      (is (= (:id resp) (-> {:siteurl (str (:siteurl credentials))
+                             :uri (str "/wp-json/wc/v3/products/")
+                             :query (:id resp)
+                             :username (:ckr credentials)
+                             :password (:csr credentials)
+                             :exception true
+                             :insecure true}
+                            (get-req)
+                            (:id))))
+      (is (= "13" (-> {:url (str (:siteurl credentials) "/wp-json/wc/v3/products/" (:id resp))
+                       :username (:ckw credentials)
+                       :password (:csw credentials)
+                       :body (json/write-str {:regular_price "13"})
+                       :exception true
+                       :insecure true}
+                      (post-req)
+                      (:regular_price))))
+      (is (= (:id resp) (-> {:siteurl (str (:siteurl credentials))
+                             :uri (str "/wp-json/wc/v3/products/" (:id resp) "/?force=true")
+                             :username (:ckw credentials)
+                             :password (:csw credentials)
+                             :exception true
+                             :insecure true}
+                            (delete-req)
+                            (:id)))))))
