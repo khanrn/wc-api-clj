@@ -69,7 +69,8 @@
 
 (deftest core-api-functions-success-test
   (testing "Testing core API functions."
-    (let [resp (post-req {:url (str (:siteurl credentials) "/wp-json/wc/v3/products")
+    (let [resp (post-req {:siteurl (:siteurl credentials)
+                          :uri "/wp-json/wc/v3/products"
                           :username (:ckw credentials)
                           :password (:csw credentials)
                           :body (json/write-str (:product_to_create credentials))
@@ -86,7 +87,8 @@
                              :insecure true}
                             (get-req)
                             (:id))))
-      (is (= "13" (-> {:url (str (:siteurl credentials) "/wp-json/wc/v3/products/" (:id resp))
+      (is (= "13" (-> {:siteurl (:siteurl credentials)
+                       :uri (str "/wp-json/wc/v3/products/" (:id resp))
                        :username (:ckw credentials)
                        :password (:csw credentials)
                        :body (json/write-str {:regular_price "13"})
