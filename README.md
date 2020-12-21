@@ -1,7 +1,7 @@
 <p align="center"><a href="https://codemascot.com" target="_blank"><img src="https://raw.githubusercontent.com/codemascot/wc-api-clj/master/img/logo.svg" width="600"></a></p>
 
 ## *WooCommerce* REST API Client - Written in *Clojure*
-A wrapper of *WooCommerce* REST API written in *Clojure*. Easily interact with the WooCommerce REST API securely using this library. Over HTTPS connection, this library uses *BasicAuth* means it will use `consumer_key` and `consumer_secret` strings of *WooCommerce* REST API settings. *Oauth* support would be added soon.
+A wrapper of *WooCommerce* REST API written in *Clojure*. Interact with the WooCommerce REST API securely using this library. Over HTTPS connection, this library uses *BasicAuth* means it will use `consumer_key` and `consumer_secret` strings of *WooCommerce* REST API settings. *Oauth* support would be added soon.
 
 ## Documentation
 - Documentation Site - [codemascot.com/wc-api-clj](https://www.codemascot.com/wc-api-clj/)
@@ -16,7 +16,7 @@ Currently below endpoints helper functions are available-
 Others are work in progress, will be available soon!
 
 ## License
-Copyright © 2020 **[CodeMascot](https://www.codemascot.com/)**, **[Khan Mohammad R.](https://www.codemascot.com/)**
+Copyright © 2020 **[Khan Mohammad R.](https://www.codemascot.com/)** AKA **[CodeMascot](https://www.codemascot.com/)**
 
 This program and the accompanying materials are made available under the terms of the Eclipse Public License 2.0 which is available at http://www.eclipse.org/legal/epl-2.0.
 
