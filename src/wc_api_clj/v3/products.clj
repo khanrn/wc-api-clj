@@ -11,7 +11,8 @@
 (defn create-product
   "Create product(s)."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]
-  (try (woo/post-req {:url (str url "/wp-json/wc/v3/products")
+  (try (woo/post-req {:siteurl url
+                      :uri "/wp-json/wc/v3/products"
                       :username consumer_key
                       :password consumer_secret
                       :body body
@@ -44,7 +45,8 @@
 (defn update-product-by-id
   "Update a product by the product's ID."
   [{:keys [url consumer_key consumer_secret product body exception insecure]}]
-  (try (woo/post-req {:url (str url "/wp-json/wc/v3/products/" product)
+  (try (woo/post-req {:siteurl url
+                      :uri (str "/wp-json/wc/v3/products/" product)
                       :username consumer_key
                       :password consumer_secret
                       :body body
@@ -66,7 +68,8 @@
 (defn products-batch-operations
   "CRUD multiple products in a batch."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]
-  (try (woo/post-req {:url (str url "/wp-json/wc/v3/products/batch")
+  (try (woo/post-req {:siteurl url
+                      :uri "/wp-json/wc/v3/products/batch"
                       :username consumer_key
                       :password consumer_secret
                       :body body

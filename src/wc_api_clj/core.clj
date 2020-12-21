@@ -24,9 +24,9 @@
 
 (defn post-req
   "POST request wrapper function with authentication. Must need consumer key/secret."
-  [{:keys [url username password body insecure exception]}]
-  (if (and url username password body)
-    (:body (wp-rest/wp-post {:url url
+  [{:keys [siteurl uri username password body insecure exception]}]
+  (if (and siteurl uri username password body)
+    (:body (wp-rest/wp-post {:url (str siteurl uri)
                              :options {:basic-auth [username password]
                                        :body body
                                        :headers {"X-Api-Version" "2"}

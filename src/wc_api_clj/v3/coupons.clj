@@ -11,7 +11,8 @@
 (defn create-coupon
   "Create coupon(s)."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]
-  (try (woo/post-req {:url (str url "/wp-json/wc/v3/coupons")
+  (try (woo/post-req {:siteurl url
+                      :uri "/wp-json/wc/v3/coupons"
                       :username consumer_key
                       :password consumer_secret
                       :body body
@@ -44,7 +45,8 @@
 (defn update-coupon-by-id
   "Update a coupon by the coupon's ID."
   [{:keys [url consumer_key consumer_secret coupon body exception insecure]}]
-  (try (woo/post-req {:url (str url "/wp-json/wc/v3/coupons/" coupon)
+  (try (woo/post-req {:siteurl url
+                      :uri (str "/wp-json/wc/v3/coupons/" coupon)
                       :username consumer_key
                       :password consumer_secret
                       :body body
@@ -66,7 +68,8 @@
 (defn coupons-batch-operations
   "CRUD multiple coupons in a batch."
   [{:keys [url consumer_key consumer_secret body exception insecure]}]
-  (try (woo/post-req {:url (str url "/wp-json/wc/v3/coupons/batch")
+  (try (woo/post-req {:siteurl url
+                      :uri "/wp-json/wc/v3/coupons/batch"
                       :username consumer_key
                       :password consumer_secret
                       :body body
