@@ -1,6 +1,7 @@
 (ns wc-api-clj.core-test
   (:require [clojure.test :refer :all]
-            [wc-api-clj.core :refer :all]))
+            [wc-api-clj.core :refer :all]
+            [clojure.data.json :as json]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Testing Credentials ;;
