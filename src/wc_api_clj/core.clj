@@ -1,7 +1,8 @@
 (ns wc-api-clj.core
   "Wrapper functions around [[wc-api-clj.rest]] functions to communicate
   with the **WooCommerce** REST API endpoints."
-  (:require [wc-api-clj.rest :as wp-rest]))
+  (:require [wc-api-clj.rest :as wp-rest]
+            [wc-api-clj.util :as util]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GET request wrapper function(s) ;;
@@ -10,7 +11,7 @@
 (defn get-req
   "GET request wrapper function with authentication. Must need consumer key/secret."
   [{:keys [siteurl uri query username password insecure exception]}]
-  (if (and siteurl uri username password)
+  (if (and (util/is-url siteurl) uri username password)
     (:body (wp-rest/wp-get {:url (str siteurl uri query)
                             :options {:accept :json
                                       :throw-exceptions (not (not exception))
@@ -25,7 +26,7 @@
 (defn post-req
   "POST request wrapper function with authentication. Must need consumer key/secret."
   [{:keys [siteurl uri username password body insecure exception]}]
-  (if (and siteurl uri username password body)
+  (if (and (util/is-url siteurl) uri username password body)
     (:body (wp-rest/wp-post {:url (str siteurl uri)
                              :options {:basic-auth [username password]
                                        :body body
@@ -43,7 +44,7 @@
 (defn delete-req
   "DELETE request wrapper function. Must need consumer key/secret."
   [{:keys [siteurl uri query username password insecure exception]}]
-  (if (and siteurl uri username password)
+  (if (and (util/is-url siteurl) uri username password)
     (:body (wp-rest/wp-delete {:url (str siteurl uri query)
                                :options {:accept :json
                                          :throw-exceptions (not (not exception))
