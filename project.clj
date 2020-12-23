@@ -7,7 +7,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [clj-http "3.1.0"]
-                 [org.clojure/data.json "1.0.0"]]
+                 [org.clojure/data.json "1.0.0"]
+                 [commons-validator/commons-validator "1.7"]]
   :plugins [[lein-codox "0.10.7"]]
   :codox {:project {:name "wc-api-clj"}
           :output-path "docs/html"
