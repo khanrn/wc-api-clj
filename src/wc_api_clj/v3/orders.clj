@@ -2,7 +2,8 @@
   "Helper functions to communicate with the WooCommerce REST API's orders endpoints.
   These functions need authentication by `consumer_key` and `consumer_secret`.</br>
   https://woocommerce.github.io/woocommerce-rest-api-docs/#orders"
-  (:require [wc-api-clj.core :as woo]))
+  (:require [wc-api-clj.core :as woo]
+            [wc-api-clj.util :as util]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Orders REST API v3 helper functions ;;
@@ -58,7 +59,7 @@
   "Delete an order by the order's ID."
   [{:keys [url consumer_key consumer_secret order exception insecure]}]
   (try (woo/delete-req {:siteurl url
-                        :uri (str "/wp-json/wc/v3/orders/" order "?force=true")
+                        :uri (str "/wp-json/wc/v3/orders/" order (util/edn-to-query-str {:force true}))
                         :username consumer_key
                         :password consumer_secret
                         :exception (not (not exception))

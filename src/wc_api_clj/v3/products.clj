@@ -2,7 +2,8 @@
   "Helper functions to communicate with the WooCommerce REST API's products endpoints.
   These functions need authentication by `consumer_key` and `consumer_secret`.</br>
   https://woocommerce.github.io/woocommerce-rest-api-docs/#products"
-  (:require [wc-api-clj.core :as woo]))
+  (:require [wc-api-clj.core :as woo]
+            [wc-api-clj.util :as util]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Products REST API v3 helper functions ;;
@@ -58,7 +59,7 @@
   "Delete a product by the porduct's ID."
   [{:keys [url consumer_key consumer_secret product exception insecure]}]
   (try (woo/delete-req {:siteurl url
-                        :uri (str "/wp-json/wc/v3/products/" product "?force=true")
+                        :uri (str "/wp-json/wc/v3/products/" product (util/edn-to-query-str {:force true}))
                         :username consumer_key
                         :password consumer_secret
                         :exception (not (not exception))
