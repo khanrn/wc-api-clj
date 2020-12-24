@@ -1,4 +1,14 @@
 # Change Log
+## v0.1.2 - 24-DEC-2020
+### ADDED
+- Apache common validator Java lib added
+- `is-url` and `edn-to-query-str` utility functions added.
+- Unit test added for utility functions in `util.clj`.
+### CHNAGED
+- Logo position changed in README
+- Logo re-sized in README
+- Shields.io badges added to README
+
 ## v0.1.1 - 21-DEC-2020
 ### FIXED
 - `post-req` function arguments refactored in `core.clj`.
