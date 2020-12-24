@@ -21,3 +21,9 @@
                                  (RegexValidator. "^\\p{Alnum}+([\\.|\\-]\\p{Alnum}+)*(:\\d*)?")
                                  UrlValidator/ALLOW_LOCAL_URLS)]
     (.isValid validator (str url))))
+
+(defn edn-to-query-str
+  "Converts EDN to query string, `{:force true :id 34 :post_type \"page\"} => ?force=true&id=34&post_type=page` "
+  [s]
+  ;; #(str (name (key %1)) "=" (str (val %1)))
+  (str "?" (str/join "&" (map (fn [[k v]] (str (name k) "=" (str v))) s))))
