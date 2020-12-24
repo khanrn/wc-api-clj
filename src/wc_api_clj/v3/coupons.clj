@@ -2,7 +2,8 @@
   "Helper functions to communicate with the WooCommerce REST API's coupons endpoints.
   These functions need authentication by `consumer_key` and `consumer_secret`.</br>
   https://woocommerce.github.io/woocommerce-rest-api-docs/#coupons"
-  (:require [wc-api-clj.core :as woo]))
+  (:require [wc-api-clj.core :as woo]
+            [wc-api-clj.util :as util]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Coupons REST API v3 helper functions ;;
@@ -58,7 +59,7 @@
   "Delete a coupon by the coupon's ID."
   [{:keys [url consumer_key consumer_secret coupon exception insecure]}]
   (try (woo/delete-req {:siteurl url
-                        :uri (str "/wp-json/wc/v3/coupons/" coupon "?force=true")
+                        :uri (str "/wp-json/wc/v3/coupons/" coupon (util/edn-to-query-str {:force true}))
                         :username consumer_key
                         :password consumer_secret
                         :exception (not (not exception))
