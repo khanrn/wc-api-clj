@@ -1,4 +1,12 @@
 # Change Log
+## v0.1.3 - 07-JAN-2021
+### ADDED
+- WooCommerce order notes enpoints wrapper added
+- WooCommerce order notes enpoints wrapper unit tests added
+
+### CHNAGED
+- Cljdoc icon placed at Documentation in README as we will be using this for documentation.
+
 ## v0.1.2 - 24-DEC-2020
 ### ADDED
 - Apache common validator Java lib added
