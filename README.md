@@ -7,7 +7,7 @@
 *WooCommerce* REST API client, written in *Clojure*. Interact with the WooCommerce REST API securely using this library. Over HTTPS connection, this library uses *BasicAuth* means it will use `consumer_key` and `consumer_secret` strings of *WooCommerce* REST API settings. *Oauth* support would be added soon.
 
 ## Documentation
-- [![cljdoc badge](https://cljdoc.org/badge/org.clojars.codemascot/wc-api-clj)](https://cljdoc.org/d/org.clojars.codemascot/wc-api-clj/CURRENT)
+[![cljdoc badge](https://cljdoc.org/badge/org.clojars.codemascot/wc-api-clj)](https://cljdoc.org/d/org.clojars.codemascot/wc-api-clj/CURRENT)
 
 ## Wrappers
 Currently below endpoints wrapper functions are available-
