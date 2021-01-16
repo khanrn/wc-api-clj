@@ -15,6 +15,7 @@ Currently below endpoints wrapper functions are available-
 - Orders
 - Products
 - Order Notes (Added at v0.1.3)
+- Order Refunds (Added at v0.1.4)
 
 Others are work in progress, will be available soon!
 
