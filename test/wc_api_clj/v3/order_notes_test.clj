@@ -25,7 +25,7 @@
                       :exception false
                       :order (:id order)
                       :insecure true
-                      :body (json/write-str {:note "a order note"})}
+                      :body (json/write-str (:note_to_create credentials))}
                      create-order-note)]
         (is (< 0 (:id note)))
         (is (< 0 (-> {:url (:siteurl credentials)
