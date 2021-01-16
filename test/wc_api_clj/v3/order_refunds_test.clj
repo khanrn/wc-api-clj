@@ -26,8 +26,8 @@
                         :order (:id order)
                         :api_refund false
                         :insecure true
-                        :body (json/write-str {:amount "5"})}
-                     create-order-refund)]
+                        :body (json/write-str {:refund_to_create credentials})}
+                       create-order-refund)]
         (is (< 0 (:id refund)))
         (is (< 0 (-> {:url (:siteurl credentials)
                       :consumer_key (:ckr credentials)

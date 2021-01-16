@@ -47,6 +47,7 @@
                                     :shipping_lines [{:method_id "flat_rate"
                                                       :method_title "Flat Rate"
                                                       :total "10.00"}]}
+                  :refund_to_create {:amount "5"}
                   :ckr "ck_86e637eef49ca8f2c864ad7b84dc17b0a7b78750"
                   :csr "cs_0890a046f5b9a30825970a65d8ab8e9c7fa0deb6"
                   :ckw "ck_469b67ce2e12bd1a1b290abf4b1c108e61b4f71c"
