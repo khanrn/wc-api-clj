@@ -1,4 +1,4 @@
-## *WooCommerce* REST API Client - Written in *Clojure*
+# *WooCommerce* REST API Client <br> Written in *Clojure*
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.codemascot/wc-api-clj.svg)](https://clojars.org/org.clojars.codemascot/wc-api-clj) [![cljdoc badge](https://cljdoc.org/badge/org.clojars.codemascot/wc-api-clj)](https://cljdoc.org/d/org.clojars.codemascot/wc-api-clj/CURRENT) ![last-commit](https://img.shields.io/github/last-commit/codemascot/wc-api-clj.svg)
 
