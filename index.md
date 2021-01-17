@@ -1,38 +1,17 @@
+## *WooCommerce* REST API Client - Written in *Clojure*
 
-## WooCommerce REST API Client <br> Written in Clojure
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.codemascot/wc-api-clj.svg)](https://clojars.org/org.clojars.codemascot/wc-api-clj) [![cljdoc badge](https://cljdoc.org/badge/org.clojars.codemascot/wc-api-clj)](https://cljdoc.org/d/org.clojars.codemascot/wc-api-clj/CURRENT) ![last-commit](https://img.shields.io/github/last-commit/codemascot/wc-api-clj.svg)
 
-You can use the [editor on GitHub](https://github.com/codemascot/wc-api-clj/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<p align="center"><a href="https://codemascot.com" target="_blank"><img src="https://raw.githubusercontent.com/codemascot/wc-api-clj/master/img/logo.svg" width="1000"></a></p><br>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Clojars
+Library: [clojars.org/org.clojars.codemascot/wc-api-clj](https://clojars.org/org.clojars.codemascot/wc-api-clj)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## License
+Copyright © 2020 **[Khan Mohammad R.](https://www.codemascot.com/)** AKA **[CodeMascot](https://www.codemascot.com/)**
 
-```markdown
-Syntax highlighted code block
+This program and the accompanying materials are made available under the terms of the Eclipse Public License 2.0 which is available at http://www.eclipse.org/legal/epl-2.0.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/codemascot/wc-api-clj/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Acknowledgment
+The *Clojure* logo is borrowed under [MIT license](https://opensource.org/licenses/MIT), from *[Vorillaz's](https://iconscout.com/contributors/vorillaz/icons)* account at [Iconscout](https://iconscout.com).
