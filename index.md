@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+
+## WooCommerce REST API Client <br> Written in Clojure
 
 You can use the [editor on GitHub](https://github.com/codemascot/wc-api-clj/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
